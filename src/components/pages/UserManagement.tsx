@@ -7,6 +7,7 @@ import {
 } from "@chakra-ui/react";
 import { FC, memo, useCallback, useEffect } from "react";
 import { useAllUsers } from "../../hooks/useAllUsers";
+import { useLoginUser } from "../../hooks/useLoginUser";
 import { useSelectUser } from "../../hooks/useSelectUser";
 import { UserCard } from "../organisms/user/UserCard";
 import { UserDetailModal } from "../organisms/user/UserDetailModal";
@@ -15,6 +16,8 @@ export const UserManagement: FC = memo(() => {
   const { isOpen, onClose, onOpen } = useDisclosure();
   const { getUsers, users, loading } = useAllUsers();
   const { onSelectUser, setSelectedUser, selectedUser } = useSelectUser();
+  const { loginUser } = useLoginUser();
+  console.log(loginUser);
 
   const onClickUser = useCallback(
     (id: number) => {

@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 export const Home: FC = memo(() => {
   return (
     <>
-      <p>Homeページ</p>
+      {/* <p>Homeページ</p> */}
       <Outlet />
     </>
   );
